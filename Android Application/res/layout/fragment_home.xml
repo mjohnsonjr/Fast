@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+   
+
+    <TextView
+        android:id="@+id/userName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
+        android:gravity="top"
+        android:text="@string/userName"
+        android:textSize="30sp"
+        android:layout_marginTop="15sp"
+        android:layout_marginBottom="20sp"  
+        android:textAppearance="?android:attr/textAppearanceLarge"/>
+
+    <TextView
+        android:id="@+id/total"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/userName"
+        android:text="@string/total"
+        android:textSize="26sp"
+        android:layout_marginTop="15sp" 
+        android:layout_marginLeft="15sp"
+        android:textAppearance="?android:attr/textAppearanceLarge"/>
+
+    <TextView
+        android:id="@+id/totalDistance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/total"
+        android:text="@string/totalDistance"
+        android:textSize="25sp"
+        android:layout_marginTop="25sp" 
+        android:layout_marginLeft="30sp"
+        android:paddingLeft="4sp"/>
+    
+<!-- 	    <com.google.android.gms.common.SignInButton -->
+<!-- 	        android:id="@+id/sign_in_button" -->
+<!-- 	        android:layout_width="wrap_content" -->
+<!-- 	        android:layout_height="wrap_content" /> -->
+
+
+
+    <TextView
+        android:id="@+id/heartRateText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/totalDistance"
+        android:text="@string/averateHeartRateText"
+        android:textSize="26sp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_marginTop="15sp"
+        android:layout_marginLeft="15sp"  />
+    
+        <TextView
+        android:id="@+id/averageHeartrate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/heartRateText"
+        android:paddingLeft="4sp"
+        android:text="@string/averateHeartRate"
+        android:textSize="25sp"
+        android:layout_marginTop="15sp"
+        android:layout_marginLeft="30sp"  />
+
+</RelativeLayout>

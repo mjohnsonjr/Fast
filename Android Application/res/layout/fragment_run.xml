@@ -1,0 +1,145 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingTop="10sp" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingRight="16sp"
+            android:text="@string/runTime"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/runTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/run"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingTop="10sp" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingRight="16sp"
+            android:text="@string/distanceLabel"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/distance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/distance"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+   	<LinearLayout android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingTop="10sp" >
+	    
+	      <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/speedLabel"
+            android:paddingRight="16sp"
+            android:textSize="16sp" />
+	      
+	      <TextView
+	        android:id="@+id/speed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/speed"
+            android:textSize="16sp" />
+	      
+	    
+	</LinearLayout>
+
+   	   <LinearLayout
+       android:layout_width="fill_parent"
+       android:layout_height="wrap_content"
+       android:gravity="center"
+       android:orientation="horizontal"
+       android:paddingTop="10sp" >
+
+       <TextView
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:paddingRight="16sp"
+           android:text="@string/heartRateText"
+           android:textSize="16sp" />
+
+       <TextView
+           android:id="@+id/heartRateConnected"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="@string/heartRateCurrent"
+           android:textSize="16sp" />
+   </LinearLayout>
+   	
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingTop="10sp" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingRight="16sp"
+            android:text="@string/heartRateStatus"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/heartRateCurrent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/heartRateConnected"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+   <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingTop="10sp" >
+
+	    <Button
+	        android:id="@+id/startButton"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:text="@string/startButton" 
+	        android:layout_weight="1"/>
+	
+	    <Button
+	        android:id="@+id/endButton"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:visibility="gone" 
+	        android:text="@string/endButton" 
+	        android:layout_weight="1"/>
+	    
+	 </LinearLayout>
+
+
+
+</LinearLayout>
+

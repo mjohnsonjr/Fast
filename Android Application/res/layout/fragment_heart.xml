@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <!-- tools:context=".HeartMonitor" > -->
+
+    <TextView
+        android:id="@+id/instant_speed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="42dp"
+        android:ems="10"
+        android:hint="@string/instant_speed"
+        android:textAppearance="?android:attr/textAppearanceLarge" >
+
+        <requestFocus />
+    </TextView>
+
+    <TextView
+        android:id="@+id/connection_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/connect"
+        android:layout_below="@+id/connect"
+        android:layout_marginTop="34dp"
+        android:ems="10"
+        android:hint="@string/status"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/heart_rate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/instant_speed"
+        android:layout_below="@+id/instant_speed"
+        android:layout_marginTop="18dp"
+        android:ems="10"
+        android:hint="@string/heart_rate"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+    
+    <TextView 
+        android:id="@+id/battery"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/heart_rate"
+        android:layout_below="@id/heart_rate"
+        android:layout_marginTop="18dp"
+        android:ems="10"
+        android:hint="@string/battery"
+        android:textAppearance="?android:attr/textAppearanceLarge"/>
+
+    <Button
+        android:id="@+id/connect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/heart_rate"
+        android:layout_below="@+id/battery"
+        android:layout_marginTop="30dp"
+        android:text="@string/connect" />
+
+    <Button
+        android:id="@+id/disconnect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/connection_status"
+        android:layout_alignRight="@+id/connection_status"
+        android:text="@string/disconnect" />
+ 
+    <TextView
+        android:id="@+id/instant_speed_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/instant_speed"
+        android:layout_alignLeft="@id/instant_speed"
+        android:layout_marginBottom="22dp"
+        android:text="@string/instant_speed_title"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/heart_rate_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/heart_rate"
+        android:layout_below="@id/instant_speed"
+        android:text="@string/heart_rate_title"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/battery_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/battery"
+        android:layout_below="@id/heart_rate"
+        android:text="@string/battery_title"
+        android:textAppearance="?android:attr/textAppearanceMedium" /> 
+ 
+</RelativeLayout>
