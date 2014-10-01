@@ -428,7 +428,7 @@ containing a value of this type.
         public static final int powered_by_google_light=0x7f020026;
     }
     public static final class id {
-        public static final int action_settings=0x7f090032;
+        public static final int action_settings=0x7f090034;
         public static final int averageHeartrate=0x7f090027;
         public static final int battery=0x7f09001e;
         public static final int battery_title=0x7f090022;
@@ -441,14 +441,14 @@ containing a value of this type.
         public static final int connection_status=0x7f09001b;
         public static final int counter=0x7f090019;
         public static final int disconnect=0x7f09001f;
-        public static final int distance=0x7f090029;
+        public static final int distance=0x7f09002b;
         public static final int drawer_layout=0x7f090014;
-        public static final int endButton=0x7f09002e;
+        public static final int endButton=0x7f090030;
         public static final int frame_container=0x7f090015;
-        public static final int google_share_button=0x7f09002f;
+        public static final int google_share_button=0x7f090031;
         public static final int grayscale=0x7f090012;
-        public static final int heartRateConnected=0x7f09002b;
-        public static final int heartRateCurrent=0x7f09002c;
+        public static final int heartRateConnected=0x7f09002d;
+        public static final int heartRateCurrent=0x7f09002e;
         public static final int heartRateText=0x7f090026;
         public static final int heart_rate=0x7f09001d;
         public static final int heart_rate_title=0x7f090021;
@@ -460,23 +460,25 @@ containing a value of this type.
         public static final int instant_speed_title=0x7f090020;
         public static final int list_slidermenu=0x7f090016;
         public static final int match_parent=0x7f09000c;
-        public static final int menu_preferences=0x7f090031;
+        public static final int menu_preferences=0x7f090033;
         public static final int monochrome=0x7f090013;
         public static final int none=0x7f090000;
         public static final int normal=0x7f090001;
+        public static final int pedometerCount=0x7f090029;
+        public static final int pedometerText=0x7f090028;
         public static final int production=0x7f090007;
-        public static final int runTime=0x7f090028;
+        public static final int runTime=0x7f09002a;
         public static final int sandbox=0x7f090008;
         public static final int satellite=0x7f090002;
         public static final int selectionDetails=0x7f09000b;
-        public static final int speed=0x7f09002a;
-        public static final int startButton=0x7f09002d;
+        public static final int speed=0x7f09002c;
+        public static final int startButton=0x7f09002f;
         public static final int strict_sandbox=0x7f090009;
         public static final int terrain=0x7f090003;
         public static final int title=0x7f090018;
         public static final int total=0x7f090024;
         public static final int totalDistance=0x7f090025;
-        public static final int twitter_share_button=0x7f090030;
+        public static final int twitter_share_button=0x7f090032;
         public static final int userName=0x7f090023;
         public static final int wrap_content=0x7f09000d;
     }
@@ -499,13 +501,13 @@ containing a value of this type.
         public static final int beep5=0x7f050000;
     }
     public static final class string {
-        public static final int Miles=0x7f080047;
+        public static final int Miles=0x7f080049;
         public static final int action_settings=0x7f08001b;
         public static final int app_name=0x7f08001a;
         public static final int averateHeartRate=0x7f08002a;
         public static final int averateHeartRateText=0x7f080029;
-        public static final int battery=0x7f08003f;
-        public static final int battery_title=0x7f08003c;
+        public static final int battery=0x7f080041;
+        public static final int battery_title=0x7f08003e;
         /**  Button in confirmation dialog to enable Google Play services.  Clicking it
         will direct user to application settings of Google Play services where they
         can enable it [CHAR LIMIT=40] 
@@ -595,51 +597,53 @@ containing a value of this type.
         /**  Long form sign-in button text [CHAR LIMIT=30] 
          */
         public static final int common_signin_button_text_long=0x7f080018;
-        public static final int connect=0x7f080040;
+        public static final int connect=0x7f080042;
         /**  Content Description 
          */
         public static final int desc_list_item_icon=0x7f08001f;
-        public static final int disconnect=0x7f080041;
-        public static final int distance=0x7f080030;
-        public static final int distanceLabel=0x7f08002f;
-        public static final int distanceUnits=0x7f080033;
+        public static final int disconnect=0x7f080043;
+        public static final int distance=0x7f080032;
+        public static final int distanceLabel=0x7f080031;
+        public static final int distanceUnits=0x7f080035;
         public static final int drawer_close=0x7f08001e;
         public static final int drawer_open=0x7f08001d;
-        public static final int endButton=0x7f080037;
-        public static final int heartRateConnected=0x7f080038;
-        public static final int heartRateCurrent=0x7f080034;
-        public static final int heartRateCurrentText=0x7f08002c;
-        public static final int heartRateStatus=0x7f08002b;
+        public static final int endButton=0x7f080039;
+        public static final int heartRateConnected=0x7f08003a;
+        public static final int heartRateCurrent=0x7f080036;
+        public static final int heartRateCurrentText=0x7f08002e;
+        public static final int heartRateStatus=0x7f08002d;
         public static final int heartRateText=0x7f080028;
-        public static final int heart_rate=0x7f08003e;
-        public static final int heart_rate_title=0x7f08003b;
-        public static final int heart_rate_zero=0x7f080045;
+        public static final int heart_rate=0x7f080040;
+        public static final int heart_rate_title=0x7f08003d;
+        public static final int heart_rate_zero=0x7f080047;
         public static final int hello_world=0x7f08001c;
-        public static final int instant_speed=0x7f080039;
-        public static final int instant_speed_title=0x7f08003a;
-        public static final int instant_speed_zero=0x7f080046;
+        public static final int instant_speed=0x7f08003b;
+        public static final int instant_speed_title=0x7f08003c;
+        public static final int instant_speed_zero=0x7f080048;
         public static final int lastWeek=0x7f080024;
         public static final int lastWeekMiles=0x7f080025;
-        public static final int metric=0x7f080048;
+        public static final int metric=0x7f08004a;
         public static final int miles=0x7f080021;
-        public static final int preferences=0x7f080049;
-        public static final int run=0x7f08002e;
-        public static final int runTime=0x7f08002d;
-        public static final int speed=0x7f080032;
-        public static final int speedLabel=0x7f080031;
-        public static final int startButton=0x7f080036;
-        public static final int status=0x7f08003d;
-        public static final int status_connected=0x7f080043;
-        public static final int status_disconnected=0x7f080044;
-        public static final int status_unable_to_connect=0x7f080042;
-        public static final int stopButton=0x7f080035;
+        public static final int pedometerCount=0x7f08002c;
+        public static final int pedometerText=0x7f08002b;
+        public static final int preferences=0x7f08004b;
+        public static final int run=0x7f080030;
+        public static final int runTime=0x7f08002f;
+        public static final int speed=0x7f080034;
+        public static final int speedLabel=0x7f080033;
+        public static final int startButton=0x7f080038;
+        public static final int status=0x7f08003f;
+        public static final int status_connected=0x7f080045;
+        public static final int status_disconnected=0x7f080046;
+        public static final int status_unable_to_connect=0x7f080044;
+        public static final int stopButton=0x7f080037;
         public static final int thisWeek=0x7f080022;
         public static final int thisWeekMiles=0x7f080023;
-        public static final int title_activity_fast_preferences=0x7f08004a;
+        public static final int title_activity_fast_preferences=0x7f08004c;
         public static final int total=0x7f080026;
         public static final int totalDistance=0x7f080027;
         public static final int userName=0x7f080020;
-        public static final int userNameTitle=0x7f08004b;
+        public static final int userNameTitle=0x7f08004d;
         /**  Text on a placeholder buy button when Google Play services is not
          available or up-to-date 
          */

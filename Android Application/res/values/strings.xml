@@ -38,6 +38,8 @@
     <string name="heartRateText">Current Heartrate: </string>
     <string name="averateHeartRateText">Total Average Heartrate: </string>
     <string name="averateHeartRate">0 bpm</string>
+    <string name="pedometerText">Number of Steps:</string>
+    <string name="pedometerCount">0 steps</string>
     <string name="heartRateStatus">Heart Rate Monitor Status:</string>
     <string name="heartRateCurrentText">Heart Rate Monitor Status:</string>
     <string name="runTime">Run time:</string>
