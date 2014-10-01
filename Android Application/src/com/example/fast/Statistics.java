@@ -1,5 +1,6 @@
 package com.example.fast;
 
+import android.content.Context;
 import android.location.Location;
 
 /**
@@ -9,11 +10,23 @@ import android.location.Location;
  */
 public class Statistics {
 
-	private double averageSpeed = 0;
-	private double maxSpeed = 0;
-	private double distanceTravelled = 0;
+	private double averageSpeed;
+	private double maxSpeed;
+	private double distanceTravelled;
 	private double averageHeartrate;
 	private Location previousLocation;
+	/* This will handle step count updates. */
+	private Pedometer pedometer;
+	
+	/*
+	 * Context is needed to get system sensor service.
+	 */
+	public Statistics( Context context ){
+		this.averageSpeed = 0.0;
+		this.maxSpeed = 0.0;
+		this.distanceTravelled = 0.0;
+		this.pedometer = new Pedometer( context );
+	}
 	
 	/**
 	 * Updates all stored data based on a newLocation found.  Takes in the new location and heartrate and calculates
@@ -127,6 +140,12 @@ public class Statistics {
 	public double getAverageHeartrate() {
 		return averageHeartrate;
 	}
+	
+	
+	public int getNumberOfSteps() {
+		return pedometer.getValid() ? pedometer.getLastKnownSteps() : -1;
+	}//TODO: Setter?
+
 	public void setAverageHeartrate(double averageHeartrate) {
 		this.averageHeartrate = averageHeartrate;
 	}

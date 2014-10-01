@@ -85,7 +85,7 @@ public class MainActivity extends FragmentActivity implements ConnectionCallback
 	private Handler mHandler;
 	private Handler timeHandler;
 	private final int REFRESH_RATE = 1000 * 3; /* 3 second per update */
-	private final int TIMER = 100;
+	private final int TIMER = 100; /* Handler for timer callback */
 	private Statistics statistics;
 	private Location previousLocation;
 	
@@ -124,20 +124,20 @@ public class MainActivity extends FragmentActivity implements ConnectionCallback
 		
 		
 		/* SQL Lite */
-		database = new Database(this);
+		database = new Database( getApplicationContext() );
 	
 		
 		/* Setup GPS Tracking, timers */
-		gpsTracker = new GPSTracker(this);
+		gpsTracker = new GPSTracker( getApplicationContext() );
 		mHandler =  new Handler();
 		timeHandler = new Handler();
 		gpsTracker.startUsingGPS();
 		
 		/* Statistics Handler */
-		statistics = new Statistics();
+		statistics = new Statistics( getApplicationContext() );
 		
 		/* Preferences Handling */
-		prefs = PreferenceManager.getDefaultSharedPreferences(this);
+		prefs = PreferenceManager.getDefaultSharedPreferences( getApplicationContext() );
 		usingMetric = prefs.getBoolean("metric", false);
 		listener = new SharedPreferences.OnSharedPreferenceChangeListener() {
 			  public void onSharedPreferenceChanged(SharedPreferences prefs, String key) {
@@ -683,8 +683,8 @@ public class MainActivity extends FragmentActivity implements ConnectionCallback
 		seconds = seconds % 60;
 		minutes = minutes % 60;
 		String hoursString = hours > 9 ? hours.toString() : "0" + hours.toString();
-		String minutesString = minutes > 9 ? minutes.toString() : "0" + minutes.toString();;
-		String secondsString = seconds > 9 ? seconds.toString() : "0" + seconds.toString();;
+		String minutesString = minutes > 9 ? minutes.toString() : "0" + minutes.toString();
+		String secondsString = seconds > 9 ? seconds.toString() : "0" + seconds.toString();
 
 		String msString = String.valueOf(time % 360000);
 		Character msChar = msString.charAt(msString.length() -3);

@@ -12,12 +12,14 @@ import android.database.sqlite.SQLiteDatabase;
 public class Database { 
 
 	private DatabaseHelper dbHelper;  
-		private SQLiteDatabase database;  
+		private SQLiteDatabase database;
+		private Context context;
 		public final static String TABLE= "fast_table"; 
 		public final static String ID = "_id"; 
 		public final static String AVERAGE_SPEED = "average_speed", MAX_SPEED = "max_speed", DISTANCE = "distance", USERNAME = "username", AVERAGE_HEARTRATE = "average_heartrate"; 
 	  
-	public Database(Context context){  
+	public Database(Context context){ 
+		this.context = context;
 	    dbHelper = new DatabaseHelper(context);  
 	    database = dbHelper.getWritableDatabase();  
 	}
@@ -100,7 +102,7 @@ public class Database {
 	 */
 	public Statistics selectStatistics(String name){
 		Cursor cursor = selectRecords(name);
-		Statistics stat = new Statistics();
+		Statistics stat = new Statistics( context );
 		stat.setAverageHeartrate(0.0);
 		cursor.moveToFirst();
 		

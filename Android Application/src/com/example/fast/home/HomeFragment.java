@@ -22,6 +22,7 @@ public class HomeFragment extends Fragment {
 	private TextView totalDistance;
 	private TextView userName;
 	private TextView avgHeart;
+	private TextView stepCount;
 	private double totalQueriedDistanceValue;
 	
 	
@@ -35,10 +36,12 @@ public class HomeFragment extends Fragment {
 	public void onActivityCreated(Bundle savedInstanceState) {
 		super.onActivityCreated(savedInstanceState);
 		
-		userName = (TextView) getActivity().findViewById(R.id.userName);
+		/* Reference all updatable textviews */
+		userName = (TextView) getActivity().findViewById( R.id.userName );
 		//signInButton = (SignInButton) getActivity().findViewById(R.id.sign_in_button);
-		totalDistance = (TextView) getActivity().findViewById(R.id.totalDistance);
-		avgHeart = (TextView) getActivity().findViewById(R.id.averageHeartrate);
+		totalDistance = (TextView) getActivity().findViewById( R.id.totalDistance );
+		avgHeart = (TextView) getActivity().findViewById( R.id.averageHeartrate );
+		stepCount = (TextView) getActivity().findViewById( R.id.pedometerCount );
 		
 		/* Sign into Google! */
 		((MainActivity)getActivity()).signInToGoogleAccount();
@@ -66,6 +69,8 @@ public class HomeFragment extends Fragment {
 			
 			
 			avgHeart.setText(MainActivity.format(((MainActivity) getActivity()).getAllTimeStatistics().getAverageHeartrate()) + " bpm");
+			
+			stepCount.setText( ( (MainActivity) getActivity()).getAllTimeStatistics().getNumberOfSteps()  + " steps");
 	}
 	
 	
