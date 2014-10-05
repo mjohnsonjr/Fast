@@ -16,7 +16,6 @@ public class Statistics {
 	private double averageHeartrate;
 	private Location previousLocation;
 	/* This will handle step count updates. */
-	private Pedometer pedometer;
 	
 	/*
 	 * Context is needed to get system sensor service.
@@ -25,7 +24,6 @@ public class Statistics {
 		this.averageSpeed = 0.0;
 		this.maxSpeed = 0.0;
 		this.distanceTravelled = 0.0;
-		this.pedometer = new Pedometer( context );
 	}
 	
 	/**
@@ -140,11 +138,6 @@ public class Statistics {
 	public double getAverageHeartrate() {
 		return averageHeartrate;
 	}
-	
-	
-	public int getNumberOfSteps() {
-		return pedometer.getValid() ? pedometer.getLastKnownSteps() : -1;
-	}//TODO: Setter?
 
 	public void setAverageHeartrate(double averageHeartrate) {
 		this.averageHeartrate = averageHeartrate;

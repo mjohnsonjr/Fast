@@ -23,7 +23,6 @@ public class HomeFragment extends Fragment {
 	private TextView userName;
 	private TextView avgHeart;
 	private TextView stepCount;
-	private double totalQueriedDistanceValue;
 	
 	
 	@Override
@@ -70,16 +69,6 @@ public class HomeFragment extends Fragment {
 			
 			avgHeart.setText(MainActivity.format(((MainActivity) getActivity()).getAllTimeStatistics().getAverageHeartrate()) + " bpm");
 			
-			stepCount.setText( ( (MainActivity) getActivity()).getAllTimeStatistics().getNumberOfSteps()  + " steps");
-	}
-	
-	
-
-	public TextView getTotalDistance(){
-		return totalDistance;
-	}
-	
-	public double getQueriedTotalDistance(){
-		return totalQueriedDistanceValue;
+			stepCount.setText( ( (MainActivity) getActivity()).getSteps()  + " steps");
 	}
 }

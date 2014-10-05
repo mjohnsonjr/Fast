@@ -107,6 +107,9 @@ public class MainActivity extends FragmentActivity implements ConnectionCallback
 	private OnSharedPreferenceChangeListener listener;
 	private boolean usingMetric;
 	
+	/* Pedometer */
+	private Pedometer pedometer;
+	
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -135,6 +138,9 @@ public class MainActivity extends FragmentActivity implements ConnectionCallback
 		
 		/* Statistics Handler */
 		statistics = new Statistics( getApplicationContext() );
+		
+		/* Pedometer */
+		pedometer = new Pedometer( getApplicationContext() );
 		
 		/* Preferences Handling */
 		prefs = PreferenceManager.getDefaultSharedPreferences( getApplicationContext() );
@@ -169,11 +175,13 @@ public class MainActivity extends FragmentActivity implements ConnectionCallback
 	@Override
 	protected void onPause() {
 		super.onPause();
+		//pedometer.unregisterListeners();
 	}
 	
 	@Override
 	protected void onResume() {
 		super.onResume();
+		pedometer.registerListeners();
 		updateEverything();
 	}
 	
@@ -432,6 +440,10 @@ public class MainActivity extends FragmentActivity implements ConnectionCallback
  		   if(runFragment != null){
  				runFragment.updateRunTextViews();
  			}
+ 		   
+ 		   if( homeFragment != null ){
+ 			   homeFragment.updateHomeTextViews();
+ 		   }
  		   	
  		   
  		}
@@ -637,6 +649,10 @@ public class MainActivity extends FragmentActivity implements ConnectionCallback
 	
 	public ProgressDialog getProgressDialog(){
 		return mConnectionProgressDialog;
+	}
+	
+	public int getSteps(){
+		return pedometer.getLastKnownSteps();
 	}
 	
 	/**

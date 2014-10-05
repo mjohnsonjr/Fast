@@ -40,13 +40,30 @@ public class Pedometer implements SensorEventListener {
 		return this.valid;
 	}
 	
+	public void unregisterListeners(){
+		sensorManager.unregisterListener( this );
+	}
+	
+	public void registerListeners(){
+		Sensor stepSensor = this.sensorManager.getDefaultSensor( Sensor.TYPE_STEP_COUNTER );
+		
+		if( stepSensor != null ){
+			sensorManager.registerListener( this, stepSensor, SensorManager.SENSOR_DELAY_UI );
+			this.valid = true;
+		}
+		else{
+			Log.e("FAST", "Couldn't grab the step sensor!" );
+			this.valid = false;
+		}
+	}
+	
 	@Override
 	public void onSensorChanged(SensorEvent event) {
 		switch( event.sensor.getType() ){
-			case Sensor.TYPE_STEP_DETECTOR:
-				steps++;
-				break;
 			case Sensor.TYPE_STEP_COUNTER:
+				steps = event.values[0];
+				break;
+			case Sensor.TYPE_STEP_DETECTOR:
 				break;
 		}
 	}
