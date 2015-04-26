@@ -10,6 +10,7 @@ import android.widget.TextView;
 import com.example.fast.MainActivity;
 import com.example.fast.R;
 import com.example.fast.Statistics;
+import com.google.android.gms.plus.Plus;
 
 /**
  * 
@@ -63,7 +64,7 @@ public class HomeFragment extends Fragment {
 			}
 			
 			if(((MainActivity) getActivity()).getPlusClient().isConnected()){
-				userName.setText(((MainActivity) getActivity()).getPlusClient().getAccountName());
+				userName.setText( Plus.AccountApi.getAccountName(((MainActivity) getActivity()).getPlusClient()));
 			}
 			
 			

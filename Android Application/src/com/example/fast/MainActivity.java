@@ -21,7 +21,6 @@ import android.preference.PreferenceManager;
 import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.widget.DrawerLayout;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -37,8 +36,9 @@ import com.example.fast.preferences.FastPreferences;
 import com.example.fast.run.RunFragment;
 import com.example.fast.share.ShareFragment;
 import com.google.android.gms.common.ConnectionResult;
-import com.google.android.gms.common.GooglePlayServicesClient.ConnectionCallbacks;
-import com.google.android.gms.common.GooglePlayServicesClient.OnConnectionFailedListener;
+import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.common.api.GoogleApiClient.ConnectionCallbacks;
+import com.google.android.gms.common.api.GoogleApiClient.OnConnectionFailedListener;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.GoogleMapOptions;
@@ -46,7 +46,7 @@ import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Polyline;
 import com.google.android.gms.maps.model.PolylineOptions;
-import com.google.android.gms.plus.PlusClient;
+import com.google.android.gms.plus.Plus;
 
 
 /***
@@ -95,7 +95,7 @@ public class MainActivity extends FragmentActivity implements ConnectionCallback
 	
 	/* Google+ */
 	private ProgressDialog mConnectionProgressDialog;
-	private PlusClient mPlusClient;
+	private GoogleApiClient mPlusClient;
 	private ConnectionResult mConnectionResult;
 	 
 	/* Google Maps! */
@@ -117,10 +117,7 @@ public class MainActivity extends FragmentActivity implements ConnectionCallback
 		setContentView(R.layout.activity_main);
 		
 		/* Google Plus */
-		mPlusClient = new PlusClient.Builder(this, this, this)
-				.setActions("http://schemas.google.com/AddActivity",
-						"http://schemas.google.com/BuyActivity")
-				.build();
+		mPlusClient = new GoogleApiClient.Builder( this, this, this ).addApi(Plus.API).addScope(Plus.SCOPE_PLUS_LOGIN).build();
 
 		mConnectionProgressDialog = new ProgressDialog(this);
 		mConnectionProgressDialog.setMessage("Signing in...");
@@ -560,16 +557,9 @@ public class MainActivity extends FragmentActivity implements ConnectionCallback
 	@Override
 	public void onConnected(Bundle connectionHint) {
 		  mConnectionProgressDialog.dismiss();
-		  Toast.makeText(this, mPlusClient.getAccountName() + " is connected!", Toast.LENGTH_LONG).show();
+		  Toast.makeText(this, Plus.AccountApi.getAccountName(mPlusClient) + " is connected!", Toast.LENGTH_LONG).show();
 		  updateEverything();
 	}
-
-	/* Google Plus */
-	@Override
-	public void onDisconnected() {
-		 Log.d("MainActivity", "disconnected");
-	}
-	
 	
 	/* Getters for fragments, statics */
 	public GPSTracker getGpsTracker(){
@@ -635,7 +625,7 @@ public class MainActivity extends FragmentActivity implements ConnectionCallback
 		}		
 	}
 	
-	public PlusClient getPlusClient(){
+	public GoogleApiClient getPlusClient(){
 		return mPlusClient;
 	}
 	
@@ -708,5 +698,11 @@ public class MainActivity extends FragmentActivity implements ConnectionCallback
 		String concat = hoursString + ":" + minutesString + ":" + secondsString + "."+ msChar;
 		
 		return concat;
+	}
+
+	@Override
+	public void onConnectionSuspended(int arg0) {
+		// TODO Auto-generated method stub
+		
 	}
 }
